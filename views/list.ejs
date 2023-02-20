@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do This List</title>
+</head>
+<body>
+   <% if (myDay === "Saturday" || myDay === "Sunday"){ %> <!-- kato tagien merkitys -->
+        <h1>It's <%= myDay %>, have a nice weekend!</h1>
+    <% }else if(myDay === "Wednesday") { %>
+        <h1>It's <%= myDay %> my dudes. 🐸</h1>
+    <% }else { %>
+        <h1>It's <%= myDay %></h1>
+    <% } %>
+
+    
+</body>
+</html>
