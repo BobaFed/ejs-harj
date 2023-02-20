@@ -1,18 +1,34 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="UTF-8">
-    <title>To Do This List</title>
-</head>
-<body>
-   <% if (myDay === "Saturday" || myDay === "Sunday"){ %> <!-- kato tagien merkitys -->
-        <h1>It's <%= myDay %>, have a nice weekend!</h1>
-    <% }else if(myDay === "Wednesday") { %>
-        <h1>It's <%= myDay %> my dudes. 🐸</h1>
-    <% }else { %>
-        <h1>It's <%= myDay %></h1>
-    <% } %>
+<%- include("header") -%>
 
-    
-</body>
-</html>
+<body>
+
+    <div class="box" id="heading">
+
+        <% if (listTitle === "Saturday" || listTitle ==="Sunday" ){ %> <!-- kato tagien merkitys -->
+            <h1>It's <%= listTitle %>, have a nice weekend!</h1>
+            <!-- <% xaxa %> ei inputtii mut kaikki js koodi näiden sisään -->
+            <% }else if(listTitle ==="Wednesday" ) { %> <!-- muuttujat <%= asdsadsa %> -->
+                <h1>It's <%= listTitle %> my dudes. 🐸</h1>
+                <% }else { %>
+                    <h1><%= listTitle %>
+                    </h1>
+                    <% } %>
+
+    </div>
+
+    <div class="box">
+        <% for (var i=0; i < listItem.length; i++) { %>
+
+            <div class="item">
+                <input type="checkbox">
+                <p><%= listItem[i] %></p>
+            </div>
+            <% } %>
+
+                <form class="item" action="/" method="post">
+                    <input type="text" name="newItem" placeholder="Add Item" autocomplete="off">
+                    <button type="submit" name="list" value= <%= listTitle %>>+</button>
+                </form>
+    </div>
+
+<%- include("footer") -%>
